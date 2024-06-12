@@ -423,7 +423,7 @@ static void ParseCpuId(const Leaves* leaves, X86Info* info,
       features->avx = IsBitSet(leaf_1.ecx, 28);
       features->avx_vnni = IsBitSet(leaf_7_1.eax, 4);
       features->avx2 = IsBitSet(leaf_7.ebx, 5);
-      features->avxifma = IsBitSet(leaf_7.ebx, 23);
+      features->avxifma = IsBitSet(leaf_7_1.eax, 23);
     }
     if (os_preserves->avx512_registers) {
       features->avx512f = IsBitSet(leaf_7.ebx, 16);
